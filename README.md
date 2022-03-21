@@ -19,4 +19,3 @@ taskkill /pid xxxxx /f
 
 Now go back to VSCode terminal and do again npx webpack server
 
-scatter_plot/
