@@ -1,7 +1,7 @@
 # InfoVisHW3
 InfoVis Homework 3
 
-This homework uses Webpack. To enable live-server, run:
+This homework uses Webpack. To enable live-server, run the following in VSCode terminal:
 
 npm install
 
