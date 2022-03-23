@@ -21,6 +21,7 @@ function XAxis (props) {
         </g>
     }
     if (chartType === "bar") {
+        console.log("-----------bar-------------");
         return <g>
             {<line x1={0} y1={height} x2={width} y2={height} stroke='black'/>}
             {xScale.domain().map(tickValue =>

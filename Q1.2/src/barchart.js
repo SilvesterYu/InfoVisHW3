@@ -24,6 +24,6 @@ export function BarChart (props) {
     return <g transform={`translate(${offsetX}, ${height/2+2*offsetY})`}>
         <Bars data={data} xScale={xScale} yScale={yScale} height={height/2}/>
         <YAxis yScale={yScale} height={height/2} axisLable={"Bikers star from"}/>
-        <XAxis chartType="bar" xScale={xScale} height={height} width={width} axisLable={map(data, d => d.station)}/>
+        <XAxis chartType="bar" xScale={xScale} height={height/2} width={width} axisLable={data.map(d => `${d.station}`)}/>
     </g>
 }
