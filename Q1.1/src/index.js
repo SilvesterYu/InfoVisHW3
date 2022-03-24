@@ -32,9 +32,13 @@ function Charts () {
     const [month, setMonth] = React.useState('4');
     const SVG_WIDTH = 600;
     const SVG_HEIGHT = 800;
-    const margin = {left: 50, right:50, top:50, bottom:150, gap: 70}; //you can modify the values if needed.
+    const margin = {left: 50, right:50, top:50, bottom:150, gap: 150}; //you can modify the values if needed.
     const width = SVG_WIDTH - margin.left - margin.right;
     const height = SVG_HEIGHT - margin.top - margin.bottom; 
+
+    // height for the two plots
+    const plotHeight = height/2 - margin.gap/2;
+
     //the handler of the slider bar
     const changeHandler = (event) => {
         setMonth(event.target.value);
@@ -57,8 +61,7 @@ function Charts () {
             <input key="monthText" type="text" value={MONTH[month]} readOnly/>
         </div>
         <svg width={SVG_WIDTH} height={SVG_HEIGHT}>
-        <ScatterPlot data={data} offsetX={margin.left} offsetY={margin.right} height={height} width={width} />
-            <BarChart />
+        <ScatterPlot data={data} offsetX={margin.left} offsetY={margin.top} height={plotHeight} width={width} />
         </svg>
     </div> 
 }

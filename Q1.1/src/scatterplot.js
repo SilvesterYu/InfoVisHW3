@@ -15,17 +15,16 @@ export function ScatterPlot(props){
     const{data, offsetX, offsetY, height, width} = props;
 
     // create xScale&yScale
-    console.log("xyScale");
-
     const xScale = Scales.linear(0, max(data, d => d.tripdurationS), 0, width);
-    const yScale = Scales.linear(0, max(data, d => d.tripdurationE), height/2, 0);
+    const yScale = Scales.linear(0, max(data, d => d.tripdurationE), height, 0);
     
     // translate according to offsets, draw axes and points
     // XAxis, YAxis has capital starting letters.
     return <g transform={`translate(${offsetX}, ${offsetY})`}>
-          <XAxis chartType={"scatter"} xScale={xScale} height={height/2} width={width} axisLable={"Trip duration end in"} />
-          <YAxis yScale={yScale} height={height/2} axisLable={"Trip duration start from"}/>
+          <XAxis chartType={"scatter"} xScale={xScale} height={height} width={width} axisLable={"Trip duration end in"} />
+          <YAxis yScale={yScale} height={height} axisLable={"Trip duration start from"}/>
           <Points data={data} xScale={xScale} yScale={yScale} />
         </g>
+    
     
 }
