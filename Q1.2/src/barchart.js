@@ -20,10 +20,10 @@ export function BarChart (props) {
     console.log(data.map(d => `${d.station}`));
     console.log(xScale.domain());
     console.log("++++++");
-    const yScale = Scales.linear(0, max(data, d => d.start), height/2, 0);
-    return <g transform={`translate(${offsetX}, ${height/2+2*offsetY})`}>
-        <Bars data={data} xScale={xScale} yScale={yScale} height={height/2}/>
-        <YAxis yScale={yScale} height={height/2} axisLable={"Bikers star from"}/>
-        <XAxis chartType="bar" xScale={xScale} height={height/2} width={width} axisLable={data.map(d => `${d.station}`)}/>
+    const yScale = Scales.linear(0, max(data, d => d.start), height, 0);
+    return <g transform={`translate(${offsetX}, ${offsetY})`}>
+        <Bars data={data} xScale={xScale} yScale={yScale} height={height}/>
+        <YAxis yScale={yScale} height={height} axisLable={"Bikers star from"}/>
+        <XAxis chartType="bar" xScale={xScale} height={height} width={width} axisLable={data.map(d => `${d.station}`)}/>
     </g>
 }
