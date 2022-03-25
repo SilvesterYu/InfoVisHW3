@@ -1,13 +1,10 @@
 
 import React from "react";
-import { Tooltip } from "./tooltip";
 
 export function Points(props) {
 
     const {data, xScale, yScale, height, width} = props;
     const [selectedPoint, setSelectedPoint] = React.useState(null);
-    const [tooltipX, setTooltipX] = React.useState(null);
-    const [tooltipY, setTooltipY] = React.useState(null);
 
     const mouseEnter = (d) => {
         setSelectedPoint(d);
@@ -17,15 +14,15 @@ export function Points(props) {
     };
 
     //complete the getColor and getRadius when you are asked to
-    const getColor = (selectedPoint, d) => {
-        if (selectedPoint === d){
+    const getColor = (selectedStation, station) => {
+        if (selectedStation === station){
             return "red";
         } else {
             return "steelblue";
         }
     }
-    const getRadius = (selectedPoint, d) => {
-        if (selectedPoint === d) {
+    const getRadius = (selectedStation, station) => {
+        if (selectedStation === station) {
             return 10;
         } else {
             return 5;
@@ -53,6 +50,5 @@ export function Points(props) {
                 cy={yScale(d.tripdurationE)} r={getRadius(selectedPoint, d)} fill={getColor(selectedPoint, d)} stroke={"black"}
                 onMouseEnter={()=>{mouseEnter(d)}} onMouseOut={mouseOut}/>
             })}
-        <Tooltip d={selectedPoint} left={tooltipX} top={tooltipY}/>
         </g>}
 }
