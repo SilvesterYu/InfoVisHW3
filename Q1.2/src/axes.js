@@ -3,7 +3,9 @@ import React from "react";
 export { XAxis, YAxis };
 
 function XAxis (props) {
+    
     const { chartType, xScale, height, width, axisLable } = props;
+
     if (chartType === "scatter") {
         return <g>
             {<line x1={0} y1={height} x2={width} y2={height} stroke='black'/>}
@@ -21,7 +23,6 @@ function XAxis (props) {
         </g>
     }
     if (chartType === "bar") {
-        console.log("-----------bar-------------");
         return <g>
             {<line x1={0} y1={height} x2={width} y2={height} stroke='black'/>}
             {xScale.domain().map(tickValue =>
@@ -31,13 +32,13 @@ function XAxis (props) {
                         {tickValue}
                     </text>
                 </g>
-                
-    )}
+            )}
         </g>
     }
 }
 
 function YAxis(props) {
+   
     const { yScale, height, axisLable } = props;
 
 return <g>
@@ -55,4 +56,5 @@ return <g>
     {axisLable}
 </text>
 </g>
+    
 }
