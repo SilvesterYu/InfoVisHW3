@@ -3,7 +3,6 @@ import React from "react";
 export function XAxis (props) {
     const { chartType, xScale, height, width, axisLable } = props;
     if (chartType === "scatter") {
-        console.log("-----xaxis here-----");
         return <g>
             {<line x1={0} y1={height} x2={width} y2={height} stroke='black'/>}
             {xScale.ticks().map(tickValue =>

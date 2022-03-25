@@ -16,7 +16,7 @@ export function Points(props){
     
     return <g>
             {data.map(d=>{
-                return <circle key={d.index} cx={xScale(d.tripdurationS)} cy={yScale(d.tripdurationE)} r={5} fill={"steelblue"} stroke={"black"}/>
+                return <circle key={d.station} cx={xScale(d.tripdurationS)} cy={yScale(d.tripdurationE)} r={5} fill={"steelblue"} stroke={"black"}/>
             })}
     </g>
 
