@@ -1,12 +1,11 @@
 import React from "react";
 import { max } from "d3";
-import { map } from "d3";
 import { XAxis, YAxis } from "./axes";
 import { Scales } from "./scale";
 import { Bars } from './bars';
 
 export function BarChart (props) {
-
+    
     // -- Task 1.2 -- //
     const{data, offsetX, offsetY, height, width} = props;    
     const xScale = Scales.band(data.map(d => `${d.station}`), 0, width);

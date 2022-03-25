@@ -1,7 +1,6 @@
 import React from "react";
 
 export function Bars(props){
-
     // -- Task1.2 -- //
     const {data, xScale, yScale, height} = props;
 
@@ -13,7 +12,7 @@ export function Bars(props){
     return <g>
         {data.map(d=>{
             return (
-            <rect key={d.index} x={xScale(d.station)} y={yScale(d.start)} height={height-yScale(d.start)} width={xScale.bandwidth()} fill="steelblue" stroke={"black"}></rect>
+            <rect key={d.station} x={xScale(d.station)} y={yScale(d.start)} height={height-yScale(d.start)} width={xScale.bandwidth()} fill="steelblue" stroke={"black"}></rect>
             )
             })}
     </g>
