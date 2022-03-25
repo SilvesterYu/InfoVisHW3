@@ -36,13 +36,13 @@ function Charts () {
     // -- Task 1.5 -- //
     // lift state up
 
-    const [selectedStation, setselectedStation] = React.useState(null);
+    const [selectedStation, setSelectedStation] = React.useState(null);
 
     const mouseEnter = (d) => {
-        setselectedStation(d);
+        setSelectedStation(d);
     };
     const mouseOut = () => {
-        setselectedStation(null);
+        setSelectedStation(null);
     };
 
     //the handler of the slider bar
