@@ -4,32 +4,32 @@ import React from "react";
 export function Points(props) {
 
     const {data, xScale, yScale, height, width} = props;
-    const [selectedPoint, setSelectedPoint] = React.useState(null);
+    const [selectedStation, setselectedStation] = React.useState(null);
 
     const mouseEnter = (d) => {
-        setSelectedPoint(d);
+        setselectedStation(d);
     };
     const mouseOut = () => {
-        setSelectedPoint(null);
+        setselectedStation(null);
     };
 
     //complete the getColor and getRadius when you are asked to
-    const getColor = (selectedPoint, d) => {
-        if (selectedPoint === d){
+    const getColor = (selectedStation, station) => {
+        if (selectedStation === station){
             return "red";
         } else {
             return "steelblue";
         }
     }
-    const getRadius = (selectedPoint, d) => {
-        if (selectedPoint === d) {
+    const getRadius = (selectedStation, station) => {
+        if (selectedStation === station) {
             return 10;
         } else {
             return 5;
         }
     }
 
-    if (selectedPoint === null) {
+    if (selectedStation === null) {
         return <g>
             {data.map(d => {
                 return <circle key={d.station} cx={xScale(d.tripdurationS)} 
@@ -45,9 +45,9 @@ export function Points(props) {
                 onMouseEnter={() => mouseEnter(d)} onMouseOut={mouseOut}/>
             })}
             <rect x={0} y={0} width={width} height={height} fill={"yellow"} opacity={0.5}/>
-            {data.filter(d => d.station === selectedPoint.station).map( d => {
+            {data.filter(d => d.station === selectedStation.station).map( d => {
                 return <circle key={d.station} cx={xScale(d.tripdurationS)} 
-                cy={yScale(d.tripdurationE)} r={getRadius(selectedPoint, d)} fill={getColor(selectedPoint, d)} stroke={"black"}
+                cy={yScale(d.tripdurationE)} r={getRadius(selectedStation, d)} fill={getColor(selectedStation, d)} stroke={"black"}
                 onMouseEnter={()=>{mouseEnter(d)}} onMouseOut={mouseOut}/>
             })}
         </g>}
