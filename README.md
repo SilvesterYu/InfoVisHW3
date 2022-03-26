@@ -1,7 +1,9 @@
 # InfoVisHW3
 InfoVis Homework 3
 
-This homework uses Webpack. To enable live-server, run the following in VSCode terminal:
+## How to run each folder:
+
+This homework uses Webpack. If you want to install a new environment for the live-server on your local machine, delete node_modules/ folder in each of the Qx.x/ folders, delete package-lock.json, and run:
 
 npm install
 
@@ -18,4 +20,34 @@ Then you will see a list of ports and their PID's. Let's now kill all the ports 
 taskkill /pid xxxxx /f
 
 Now go back to VSCode terminal and do again npx webpack server
+
+## Folders and what's inside
+
+### src
+
+The original code skeleton
+
+### Q1.1/
+
+Draw scatter plot
+
+### Q1.2/
+
+Draw a barchart below
+
+### Q1.3/
+
+Mouse interaction in scatterplot using React and hook
+
+### Q1.4/
+
+Mouse interaction in barchart using React and hook
+
+### Q1.5/
+
+linke the 2 interactions
+
+### Q1.6/
+
+Tooltip with mouse interaction
 
