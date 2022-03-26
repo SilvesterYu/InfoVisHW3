@@ -6,15 +6,15 @@ export function Points(props) {
     const {data, xScale, yScale, height, width, selectedStation, mouseEnter, mouseOut} = props;
 
     //complete the getColor and getRadius when you are asked to
-    const getColor = (selectedStation, d) => {
-        if (selectedStation === d){
+    const getColor = (selectedStation, station) => {
+        if (selectedStation === station){
             return "red";
         } else {
             return "steelblue";
         }
     }
-    const getRadius = (selectedStation, d) => {
-        if (selectedStation === d) {
+    const getRadius = (selectedStation, station) => {
+        if (selectedStation === station) {
             return 10;
         } else {
             return 5;
