@@ -19,7 +19,7 @@ export function Bars(props){
                 return (
                 <rect key={d.station} x={xScale(d.station)} y={yScale(d.start)} 
                 height={height-yScale(d.start)} width={xScale.bandwidth()} fill="steelblue" stroke={"black"}
-                onMouseEnter={() => mouseEnter(d)} onMouseOut={mouseOut}></rect>
+                onMouseEnter={(event) => mouseEnter("bar", event, d)} onMouseOut={mouseOut}></rect>
                 )
                 })}
         </g>
@@ -29,14 +29,14 @@ export function Bars(props){
                 return (
                 <rect key={d.station} x={xScale(d.station)} y={yScale(d.start)} 
                 height={height-yScale(d.start)} width={xScale.bandwidth()} fill="steelblue" stroke={"black"}
-                onMouseEnter={() => mouseEnter(d)} onMouseOut={mouseOut}></rect>
+                onMouseEnter={(event) => mouseEnter("bar", event, d)} onMouseOut={mouseOut}></rect>
                 )
                 })}
             {data.filter(d => d.station === selectedStation.station).map(d=>{
                 return (
                 <rect key={d.station} x={xScale(d.station)} y={yScale(d.start)} 
                 height={height-yScale(d.start)} width={xScale.bandwidth()} fill={getColor(selectedStation, d)} stroke={"black"}
-                onMouseEnter={() => mouseEnter(d)} onMouseOut={mouseOut}></rect>
+                onMouseEnter={(event) => mouseEnter("bar", event, d)} onMouseOut={mouseOut}></rect>
                 )
                 })}
             

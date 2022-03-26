@@ -42,11 +42,14 @@ function Charts () {
     const [tooltipX, setTooltipX] = React.useState(null);
     const [tooltipY, setTooltipY] = React.useState(null);
 
-    const mouseEnter = (d) => {
+    const mouseEnter = (chartType, event, d) => {
         setSelectedStation(d);
         //console.log(d);
-        setTooltipX(10 + margin.left + xScaleTooltip(d.tripdurationS));
-        setTooltipY(25 + margin.top + yScaleTooltip(d.tripdurationE));
+        // only show tooltip when mouse hovers over scatterplot
+        if (chartType === "scatter") {
+            setTooltipX(event.pageX);
+            setTooltipY(event.pageY);
+        }
     };
     const mouseOut = () => {
         setSelectedStation(null);
@@ -72,11 +75,6 @@ function Charts () {
         return d.month === MONTH[month] 
     });
    
-    // -- Task 1.6 -- // 
-    // to let tooltip still appear on the scatter plot even when mouse hovers over bar chart
-    const xScaleTooltip = Scales.linear(0, max(data, d => d.tripdurationS), 0, width);
-    const yScaleTooltip = Scales.linear(0, max(data, d => d.tripdurationE), chartHeight, 0);
-
     // -- Task 1.6 -- //
     // below returns a Tooltip
     return <div>
