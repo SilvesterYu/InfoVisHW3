@@ -1,7 +1,7 @@
 # InfoVisHW3
 InfoVis Homework 3
 
-## How to run each folder:
+## How to run code in each Qx.x/ folder:
 
 This homework uses Webpack. If you want to install a new environment for the live-server on your local machine, delete node_modules/ folder in each of the Qx.x/ folders, delete package-lock.json, and run:
 
