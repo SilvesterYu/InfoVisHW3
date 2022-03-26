@@ -23,7 +23,7 @@ Now go back to VSCode terminal and do again npx webpack server
 
 ## Folders and what's inside
 
-### src
+### src/
 
 The original code skeleton
 
