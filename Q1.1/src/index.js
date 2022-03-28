@@ -54,7 +54,7 @@ function Charts () {
             <input key="monthText" type="text" value={MONTH[month]} readOnly/>
         </div>
         <svg width={SVG_WIDTH} height={SVG_HEIGHT}>
-        <ScatterPlot data={data} offsetX={margin.left} offsetY={margin.top} height={height/2} width={width}/>
+        <ScatterPlot dataAll={dataAll} data={data} offsetX={margin.left} offsetY={margin.top} height={height/2} width={width}/>
         </svg>
     </div> 
 }
