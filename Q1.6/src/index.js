@@ -83,9 +83,9 @@ function Charts () {
             <input key="monthText" type="text" value={MONTH[month]} readOnly/>
         </div>
         <svg width={SVG_WIDTH} height={SVG_HEIGHT}>
-        <ScatterPlot data={data} offsetX={margin.left} offsetY={margin.top} height={chartHeight} width={width}
+        <ScatterPlot dataAll={dataAll} data={data} offsetX={margin.left} offsetY={margin.top} height={chartHeight} width={width}
         selectedStation={selectedStation} mouseEnter={mouseEnter} mouseOut={mouseOut}/>
-        <BarChart data={data} offsetX={margin.left} offsetY={margin.top + chartHeight + margin.gap} height={chartHeight} width={width} 
+        <BarChart dataAll={dataAll} data={data} offsetX={margin.left} offsetY={margin.top + chartHeight + margin.gap} height={chartHeight} width={width} 
         selectedStation={selectedStation} mouseEnter={mouseEnter} mouseOut={mouseOut}/>
         </svg>
         <Tooltip d={selectedStation} left={tooltipX} top={tooltipY}/>
